@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container whole">
+    <div class="row function-area">
+      <div class="col">
+        <CellContainer/>
+      </div>
+      <div class="col">00:00</div>
+      <div class="col">
+        <FoundationContainer/>
+      </div>
+    </div>
+    <div class="row cascade-area">
+      <div class="col">card</div>
+      <div class="col">card</div>
+      <div class="col">card</div>
+      <div class="col">card</div>
+      <div class="col">card</div>
+      <div class="col">card</div>
+      <div class="col">card</div>
+      <div class="col">card</div>
+    </div>
+
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import CellContainer from './components/CellContainer.vue';
+import FoundationContainer from './components/FoundationContainer';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    FoundationContainer,
+    CellContainer,
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .whole {
+    background-color: rgb(163, 203, 228);
+  }
+  .function-area {
+    height: 200px;
+  }
+
+  .cascade-area {
+  }
 </style>
