@@ -13,10 +13,18 @@
         </div>
       </div>
       <div class="cell-area foundation-area">
-        <div class="cell foundation"></div>
-        <div class="cell foundation"></div>
-        <div class="cell foundation"></div>
-        <div class="cell foundation"></div>
+        <div class="cell foundation">
+          <img class="pip" src="/images/pips/spade.png">
+        </div>
+        <div class="cell foundation">
+          <img class="pip" src="/images/pips/heart.png">
+        </div>
+        <div class="cell foundation">
+          <img class="pip" src="/images/pips/diamond.png">
+        </div>
+        <div class="cell foundation">
+          <img class="pip" src="/images/pips/clover.png">
+        </div>
       </div>
     </div>
     <div class="cascade-area">
@@ -77,6 +85,13 @@ export default {
           height: $card-height;
           background-color: $cell-color;
           border-radius: 13px;
+        }
+      }
+      .foundation-area {
+        .pip {
+          width: 40px;
+          margin: 34px auto 0 auto;
+          display: block;
         }
       }
     }
