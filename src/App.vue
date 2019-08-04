@@ -92,6 +92,7 @@ export default {
 
   $pip-width: 16px;
 
+
   .main {
     background-color: rgb(163, 203, 228);
     display: grid;
