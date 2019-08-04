@@ -51,10 +51,19 @@
       <div class="cascade">
         <div class="card clover"></div>
       </div>
-      <div class="cascade">cascade</div>
-      <div class="cascade">cascade</div>
-      <div class="cascade">cascade</div>
-      <div class="cascade">cascade</div>
+      <div class="cascade">
+        <div class="card spade">
+        </div>
+      </div>
+      <div class="cascade">
+        <div class="card heart"></div>
+      </div>
+      <div class="cascade">
+        <div class="card diamond"></div>
+      </div>
+      <div class="cascade">
+        <div class="card clover"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -63,10 +72,10 @@
 
 export default {
   name: 'app',
-  components: {
-  },
+  components: {},
 };
 </script>
+
 
 <style lang="scss">
   $card-width: 80px;
@@ -87,10 +96,12 @@ export default {
     background-color: rgb(163, 203, 228);
     display: grid;
     grid-template-rows: auto auto;
+
     .control-area {
       margin: 40px 20px;
       display: grid;
       grid-template-columns: 400px 150px 400px;
+
       .timer-area {
         .timer {
           padding-top: 28px;
@@ -98,16 +109,20 @@ export default {
           text-align: center;
         }
       }
+
       .cell-area {
         display: grid;
         grid-template-columns: auto auto auto auto;
+
         .cell {
+          margin-left: 10px;
           width: $card-width;
           height: $card-height;
           background-color: $cell-color;
           border-radius: 13px;
         }
       }
+
       .foundation-area {
         .pip {
           width: 40px;
@@ -116,27 +131,39 @@ export default {
         }
       }
     }
+
     .cascade-area {
+      width: 950px;
+      margin: 0 20px;
       display: grid;
       grid-template-columns: auto auto auto auto auto auto auto auto;
+
+      .cascade {
+        margin: 0 auto;
+      }
+
       .card {
         width: $card-width;
         height: $card-height;
         border-radius: 13px;
         display: grid;
         grid-template-rows: 20px auto 20px;
+
         .header-container {
           display: block;
         }
+
         .number {
           float: left;
           margin: 2px 0 0 5px;
         }
+
         .top-right-pip {
           width: $pip-width;
           float: right;
           margin: 5px 5px 0 0;
         }
+
         .bottom-left-pip {
           width: $pip-width;
           float: left;
@@ -144,20 +171,26 @@ export default {
         }
         .image {
           width: 70px;
+          display: block;
+          margin: 4px auto;
         }
       }
+
       .spade {
         background-color: $spade-background-color;
         border-color: $spade-border-color;
       }
+
       .heart {
         background-color: $heart-background-color;
         border-color: $heart-border-color;
       }
+
       .diamond {
         background-color: $diamond-background-color;
         border-color: $diamond-border-color;
       }
+
       .clover {
         background-color: $clover-background-color;
         border-color: $clover-border-color;
