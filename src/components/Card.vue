@@ -1,23 +1,77 @@
 <template>
   <div class="card-wrapper">
-    <div class="card spade">
+    <div :class="['card', pip]">
       <div class="header-container">
-        <div class="number">A</div>
-        <img class="top-right-pip" src="/images/pips/spade.png">
+        <div class="number">{{ displayNumber }}</div>
+        <img class="top-right-pip" :src="pipImageUrl">
       </div>
       <div>
-        <img class="image" src="/images/card-images/mouse.png">
+        <img class="central-image" :src="centralImageUrl">
       </div>
       <div>
-        <img class="bottom-left-pip" src="/images/pips/spade.png">
+        <img class="bottom-left-pip" :src="pipImageUrl">
       </div>
     </div>
   </div>
 </template>
 
 <script>
+const number2CentralImageMap = [
+  'mouse',
+  'cow',
+  'tiger',
+  'rabbit',
+  'dragon',
+  'snake',
+  'horse',
+  'sheep',
+  'monkey',
+  'chicken',
+  'dog',
+  'pig',
+  'white-bird',
+];
+
 export default {
-  name: 'Card',
+  name: 'card',
+  props: {
+    /**
+     * 'spade', 'heart', 'diamond', 'clover'
+     */
+    pip: {
+      type: String,
+      required: true,
+    },
+    /**
+     * 1~13
+     */
+    number: {
+      type: Number,
+      required: true,
+    },
+  },
+  computed: {
+    pipImageUrl() {
+      return `/images/pips/${this.pip}.png`;
+    },
+    displayNumber() {
+      switch (this.number) {
+        case 1:
+          return 'A';
+        case 11:
+          return 'J';
+        case 12:
+          return 'Q';
+        case 13:
+          return 'K';
+        default:
+          return String(this.number);
+      }
+    },
+    centralImageUrl() {
+      return `/images/card-images/${number2CentralImageMap[this.number - 1]}.png`;
+    },
+  },
 };
 </script>
 
@@ -64,8 +118,9 @@ export default {
     float: left;
     margin: 0 0 5px 5px;
   }
-  .image {
+  .central-image {
     width: 70px;
+    height: 60px;
     display: block;
     margin: 4px auto;
   }

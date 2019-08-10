@@ -2,13 +2,19 @@
   <div class="cascade">
     <ul>
       <li>
-        <Card></Card>
+        <Card pip="spade" :number=1></Card>
       </li>
       <li>
-        <Card></Card>
+        <Card pip="heart" :number=2></Card>
       </li>
       <li>
-        <Card></Card>
+        <Card pip="diamond" :number=11></Card>
+      </li>
+      <li>
+        <Card pip="clover" :number=13></Card>
+      </li>
+      <li>
+        <Card pip="spade" :number=1></Card>
       </li>
     </ul>
   </div>
