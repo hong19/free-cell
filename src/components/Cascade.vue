@@ -1,26 +1,15 @@
 <template>
   <div class="cascade">
     <ul>
-      <li>
-        <Card pip="spade" :number=1></Card>
-      </li>
-      <li>
-        <Card pip="heart" :number=2></Card>
-      </li>
-      <li>
-        <Card pip="diamond" :number=11></Card>
-      </li>
-      <li>
-        <Card pip="clover" :number=13></Card>
-      </li>
-      <li>
-        <Card pip="spade" :number=1></Card>
+      <li v-for="card in cascade" v-bind:key="card">
+        <Card :id="card"></Card>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Card from '@/components/Card.vue';
 
 export default {
@@ -28,6 +17,9 @@ export default {
   components: {
     Card,
   },
+  computed: mapState({
+    cascade: state => state.cascades[0],
+  }),
 };
 </script>
 

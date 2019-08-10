@@ -35,22 +35,31 @@ const number2CentralImageMap = [
 export default {
   name: 'card',
   props: {
-    /**
-     * 'spade', 'heart', 'diamond', 'clover'
-     */
-    pip: {
-      type: String,
-      required: true,
-    },
-    /**
-     * 1~13
-     */
-    number: {
+    id: {
       type: Number,
       required: true,
     },
   },
   computed: {
+    pip() {
+      const quotient = Math.floor(this.id / 13);
+      switch (quotient) {
+        case 0:
+          return 'spade';
+        case 1:
+          return 'heart';
+        case 2:
+          return 'diamond';
+        case 3:
+          return 'clover';
+        default:
+          throw Error('invalid card id.');
+      }
+    },
+    number() {
+      const remainder = this.id % 13;
+      return remainder + 1;
+    },
     pipImageUrl() {
       return `/images/pips/${this.pip}.png`;
     },
