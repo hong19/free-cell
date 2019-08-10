@@ -1,14 +1,16 @@
 <template>
-  <div class="card spade">
-    <div class="header-container">
-      <div class="number">A</div>
-      <img class="top-right-pip" src="/images/pips/spade.png">
-    </div>
-    <div>
-      <img class="image" src="/images/card-images/mouse.png">
-    </div>
-    <div>
-      <img class="bottom-left-pip" src="/images/pips/spade.png">
+  <div class="card-wrapper">
+    <div class="card spade">
+      <div class="header-container">
+        <div class="number">A</div>
+        <img class="top-right-pip" src="/images/pips/spade.png">
+      </div>
+      <div>
+        <img class="image" src="/images/card-images/mouse.png">
+      </div>
+      <div>
+        <img class="bottom-left-pip" src="/images/pips/spade.png">
+      </div>
     </div>
   </div>
 </template>
@@ -32,6 +34,9 @@ export default {
 
   $pip-width: 16px;
 
+  .card-wrapper {
+    height: 30px;
+  }
   .card {
     width: $card-width;
     height: $card-height;

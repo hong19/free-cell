@@ -1,6 +1,16 @@
 <template>
   <div class="cascade">
-    <Card></Card>
+    <ul>
+      <li>
+        <Card></Card>
+      </li>
+      <li>
+        <Card></Card>
+      </li>
+      <li>
+        <Card></Card>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -16,8 +26,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-  .cascade {
-    margin: 0 auto;
+.cascade {
+  margin: 0 auto;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
+}
 </style>
