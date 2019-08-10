@@ -1,23 +1,24 @@
 <template>
   <div class="cascade-area">
-    <Cascade></Cascade>
-    <Cascade></Cascade>
-    <Cascade></Cascade>
-    <Cascade></Cascade>
-    <Cascade></Cascade>
-    <Cascade></Cascade>
-    <Cascade></Cascade>
-    <Cascade></Cascade>
+    <Cascade v-for="cascadeId in cascadeIds" v-bind:key="cascadeId" :id="cascadeId">
+    </Cascade>
   </div>
 </template>
 
 <script>
 import Cascade from '@/components/Cascade.vue';
 
+const cascadeIds = [...Array(8).keys()];
+
 export default {
   name: 'CascadeArea',
   components: {
     Cascade,
+  },
+  data() {
+    return {
+      cascadeIds,
+    };
   },
 };
 </script>

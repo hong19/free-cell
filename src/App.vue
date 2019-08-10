@@ -39,6 +39,25 @@ export default {
   components: {
     CascadeArea,
   },
+  mounted() {
+    this.setUpCascades();
+  },
+  methods: {
+    setUpCascades() {
+      const deck = [...Array(52).keys()];
+      for (let i = 0; i < 52; i += 1) {
+        const target = Math.floor(Math.random() * 52);
+        [deck[i], deck[target]] = [deck[target], deck[i]];
+      }
+
+      for (let i = 0; i < 52; i += 1) {
+        this.$store.commit('insertCard', {
+          cascadeId: i % 8,
+          cardId: deck[i],
+        });
+      }
+    },
+  },
 };
 </script>
 

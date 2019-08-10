@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 const initCascades = [];
 for (let i = 0; i < 8; i += 1) {
-  initCascades.push([0, 1, 2, 3]);
+  initCascades.push([]);
 }
 
 /**

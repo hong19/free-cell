@@ -1,8 +1,8 @@
 <template>
   <div class="cascade">
     <ul>
-      <li v-for="card in cascade" v-bind:key="card">
-        <Card :id="card"></Card>
+      <li v-for="cardId in cascade" v-bind:key="cardId">
+        <Card :id="cardId"></Card>
       </li>
     </ul>
   </div>
@@ -17,8 +17,16 @@ export default {
   components: {
     Card,
   },
+  props: {
+    id: {
+      type: Number,
+      required: true,
+    },
+  },
   computed: mapState({
-    cascade: state => state.cascades[0],
+    cascade(state) {
+      return state.cascades[this.id];
+    },
   }),
 };
 </script>
